@@ -1,0 +1,324 @@
+/*──────────────────────────────────────────────
+  RESET & BASE
+──────────────────────────────────────────────*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  /* 1 rem ≈ 25 px → easy math */
+  font-size: 25px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #3a0ca3; /* palette index 6 (deep purple‐blue) */
+  color: #f1faee;      /* off-white text for good contrast   */
+  overflow-x: hidden;  /* no horizontal scrollbars           */
+}
+
+/*──────────────────────────────────────────────
+  HEADER
+──────────────────────────────────────────────*/
+header {
+  /* desktop/tablet height */
+  height: 80px;
+
+  /* margin makes the header look like a “card” */
+  margin: 20px;
+
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  background: #480ca8;          /* palette index 5 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 24px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Fluid wrapper keeps nav centred and clamps width */
+#header-container {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navigation links */
+.navi {
+  display: flex;
+  gap: 60px;      /* space between nav items */
+  flex-wrap: wrap;
+}
+
+.navi a {
+  color: #f1faee;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* Animated underline on hover */
+.navi a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0;
+  background: #f72585;   /* palette index 1 (pink) */
+  transition: width 0.3s ease;
+}
+
+.navi a:hover {
+  color: #4cc9f0;        /* palette index 10 (cyan) */
+}
+
+.navi a:hover::after {
+  width: 100%;
+}
+
+/*──────────────────────────────────────────────
+  WELCOME SECTION
+──────────────────────────────────────────────*/
+.content-welcome-section {
+  text-align: center;
+  background: #f1faee;   /* white card on dark bg */
+  color: #3a0ca3;
+  padding: 120px 20px 140px;
+}
+
+h1 {
+  /* subtle shadow for heading */
+  text-shadow: 2px -1px #b5179e; /* palette index 9 (magenta) */
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-top: 1rem;
+}
+
+/*──────────────────────────────────────────────
+  PROJECTS SECTION
+──────────────────────────────────────────────*/
+.project-tile {
+  background: #7209b7;  /* palette index 3 */
+  text-align: center;
+  color: #f1faee;
+}
+
+/* Section heading */
+.title-projects-section {
+  padding: 60px 20px 40px;
+}
+
+.title-projects-section h2 {
+  border-bottom: 3px solid #f1faee;
+  padding-bottom: 5px;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* Card grid */
+#projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px 15px;
+}
+
+/* Each responsive card wrapper */
+.cards-p {
+  flex: 1 1 300px;  /* grow / shrink / base width */
+  max-width: 300px;
+
+}
+
+/* Actual card */
+.tableau {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  background: #560bad;      /* palette index 4 */
+  border-radius: 18px;
+  overflow: hidden;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tableau:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* Image banner */
+.all-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 18px 18px 0 0;
+  display: block;
+
+  /* slight boost in brightness/contrast */
+  filter: brightness(1.08) contrast(1.08);
+}
+
+/* Project title */
+.projects-titles {
+  margin-top: 10px;
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+  color: #4cc9f0; /* palette index 10 */
+}
+
+/* Tech badges row */
+.tech {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 0 18px;
+}
+
+/* Individual tech badge */
+.tech span {
+  background: #4895ef;   /* palette index 9 */
+  color: #f1faee;        /* bright text for contrast */
+  font-size: 0.6rem;
+  padding: 3px 6px;
+  border-radius: 8px;
+}
+
+/*──────────────────────────────────────────────
+  CONTACT SECTION
+──────────────────────────────────────────────*/
+#contact {
+  background: #560bad;      /* palette index 4 */
+  border-top: 3px solid #b5179e;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#contact h2 {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  border-bottom: 3px solid #f1faee;
+  display: inline-block;
+  padding-bottom: 5px;
+  color: #f1faee;
+}
+
+.call {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 30px 0 5px;
+}
+
+.p-footer {
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.emoji {
+  /* ensures emoji renders with color font if available */
+  font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 1.1em;
+}
+
+/* Contact links */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.contact-list a {
+  color: #4cc9f0;         /* cyan */
+  transition: color 0.25s ease;
+}
+
+.contact-list a:hover {
+  color: #f72585;         /* pink */
+}
+
+/*──────────────────────────────────────────────
+  FOOTER
+──────────────────────────────────────────────*/
+.bot-side-footer {
+  background: #480ca8;
+}
+
+.content-bot {
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #f1faee;
+}
+
+/*──────────────────────────────────────────────
+  RESPONSIVE BREAKPOINTS
+──────────────────────────────────────────────*/
+
+/* Tablet (≤ 768 px) */
+@media (max-width: 768px) {
+  /* nav spacing tighter */
+  .navi {
+    gap: 40px;
+  }
+
+  /* two cards per row */
+  .cards-p {
+    flex: 1 1 45%;
+    max-width: 45%;
+    width:100%
+  }
+}
+
+/* Mobile (≤ 576 px) */
+@media (max-width: 576px) {
+  /* header gets taller */
+  header {
+    height: 130px;
+  }
+
+  /* nav stacked vertically */
+  .navi {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navi a {
+    font-size: 0.7rem;
+  }
+
+  /* one card per row */
+  #projects-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards-p {
+    flex: 1 1 90%;
+    max-width: 90%;
+  }
+}
