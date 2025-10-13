@@ -1,5 +1,5 @@
 # Personal-Portfolio-Webpage
 
-Using HTML/CSS/JS
+Using HTML/CSS
 
 https://codepen.io/etnad-thunderwood/full/yLBbNMd
