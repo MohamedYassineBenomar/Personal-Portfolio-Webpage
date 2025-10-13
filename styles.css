@@ -322,3 +322,123 @@ h1 {
     max-width: 90%;
   }
 }
+/* Gold year tag — same size/shape as tech chips */
+.year-chip {
+  background: linear-gradient(135deg, #FFD700, #FFB000);
+  color: #3a0ca3;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25) inset, 0 1px 2px rgba(0,0,0,0.12);
+  font-size: 0.6rem;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Make anchor cards fill their li */
+.tableau { display: flex; flex-direction: column; height: 100%; }
+
+/* BOOKING SECTION (JS-free) */
+.booking {
+  background: #560bad;
+  border-top: 3px solid #4cc9f0;
+  padding: 80px 20px;
+  text-align: center;
+  color: #f1faee;
+}
+
+.booking h2 {
+  margin-bottom: 14px;
+  font-size: 1rem;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #f1faee;
+}
+
+.booking-sub {
+  font-size: 0.75rem;
+  opacity: 0.95;
+  margin-bottom: 26px;
+}
+
+.btn-book {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: #f72585;
+  color: #f1faee;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+}
+
+.btn-book:hover {
+  background: #4cc9f0;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(0,0,0,0.45);
+}
+
+.booking-note {
+  margin-top: 16px;
+  font-size: 0.68rem;
+  opacity: 0.85;
+}
+
+/* Anchor targets sit below sticky header */
+#booking, #contact, #nav-projects { scroll-margin-top: 100px; }
+
+/* Mobile tweak */
+@media (max-width: 576px) {
+  .btn-book { width: 100%; max-width: 360px; }
+}
+/* Year block — centered, gold, its own line */
+.year-block {
+  align-self: center;              /* centers inside flex column card */
+  margin: 10px auto 0;             /* space below image */
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #FFD700, #FFB000);
+  color: #3a0ca3;
+  border-radius: 999px;            /* pill */
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25) inset, 0 1px 2px rgba(0,0,0,0.12);
+}
+
+/* Ensure anchor cards fill their li */
+.tableau { display: flex; flex-direction: column; height: 100%; }
+
+/* BOOKING SECTION (unchanged) */
+.booking {
+  background: #560bad;
+  border-top: 3px solid #4cc9f0;
+  padding: 80px 20px;
+  text-align: center;
+  color: #f1faee;
+}
+.booking h2 {
+  margin-bottom: 14px;
+  font-size: 1rem;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #f1faee;
+}
+.booking-sub { font-size: 0.75rem; opacity: 0.95; margin-bottom: 26px; }
+.btn-book {
+  display: inline-block; padding: 12px 22px; border-radius: 999px;
+  background: #f72585; color: #f1faee; font-weight: 600; letter-spacing: 0.02em;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+}
+.btn-book:hover { background: #4cc9f0; transform: translateY(-2px); box-shadow: 0 14px 26px rgba(0,0,0,0.45); }
+.booking-note { margin-top: 16px; font-size: 0.68rem; opacity: 0.85; }
+
+/* Anchor targets sit below sticky header */
+#booking, #contact, #nav-projects { scroll-margin-top: 100px; }
+
+/* Mobile tweak */
+@media (max-width: 576px) {
+  .btn-book { width: 100%; max-width: 360px; }
+}
