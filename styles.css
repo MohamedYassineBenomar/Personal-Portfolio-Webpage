@@ -442,5 +442,22 @@ h1 {
 @media (max-width: 576px) {
   .btn-book { width: 100%; max-width: 360px; }
 }
+
 /* Space between the booking button and the LinkedIn item */
 .contact-booking { margin-bottom: 1rem; } /* ≈ 25px given your 1rem = 25px */
+
+/* Page fade-in (on load) */
+@keyframes pageFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+html { background: #3a0ca3; } /* avoids white flash while body is transparent */
+body {
+  opacity: 0;
+  animation: pageFade 1s ease-out 500ms both; /* quick, subtle */
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
